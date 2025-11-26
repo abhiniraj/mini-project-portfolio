@@ -1,0 +1,7 @@
+# Ignore common runtime and IDE files
+.vscode/
+.idea/
+node_modules/
+/.sass-cache
+*.log
+data/messages.txt

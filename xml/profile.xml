@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<profile>
+  <name>Abhiniraj K</name>
+  <contact>
+    <phone>+91 9113682982</phone>
+    <email>abhinirajk82982@gmail.com</email>
+    <linkedin>https://linkedin.com/in/abhini</linkedin>
+    <github>https://github.com/abhini</github>
+    <location>Hassan, Karnataka, India</location>
+  </contact>
+  <bio>Motivated 5th semester Computer Science student seeking internship or project opportunities in software development.</bio>
+  <education>
+    <degree>B.E. Computer Science</degree>
+    <college>Malnad College Of Engineering</college>
+    <years>2023-Present</years>
+    <cgpa>8.67</cgpa>
+  </education>
+  <skills>
+    <skill>Python</skill>
+    <skill>C</skill>
+    <skill>Java</skill>
+    <skill>Power BI</skill>
+    <skill>Figma</skill>
+  </skills>
+  <projects>
+    <project>
+      <title>IoT Automatic Pet Feeder</title>
+      <desc>IoT system with scheduled feeding and mobile control</desc>
+    </project>
+    <project>
+      <title>Fletcher Checksum Implementation</title>
+      <desc>Python implementation and analysis</desc>
+    </project>
+    <project>
+      <title>Smart Agriculture Using IoT</title>
+      <desc>Sensor-based monitoring for optimized irrigation</desc>
+    </project>
+  </projects>
+</profile>
+

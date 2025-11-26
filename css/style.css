@@ -1,0 +1,125 @@
+/* Minimal styles for the portfolio */
+:root{--accent:#0a84ff;--bg:#f7f7f8;--text:#111}
+*{box-sizing:border-box}
+body{font-family:'Inter',Segoe UI,Arial,Helvetica,sans-serif;margin:0;background:var(--bg);color:var(--text);line-height:1.45}
+header{background:#fff;border-bottom:1px solid #e4e4e4;padding:1rem}
+header h1{margin:0}
+nav{margin-top:.5rem}
+header nav{display:flex;flex-wrap:wrap;gap:.6rem;margin-top:.5rem}
+nav a{color:var(--accent);text-decoration:none;padding:.25rem .4rem;border-radius:4px}
+nav a:hover{background:rgba(10,132,255,0.06)}
+/* Layout: turn main into a responsive grid */
+main{max-width:1100px;margin:1.5rem auto;padding:0 1rem;display:block}
+section{background:#fff;padding:1rem;margin-bottom:1rem;border:1px solid #eee}
+
+/* Per-section background colors and accents */
+section[id]{transition:transform .18s ease,box-shadow .18s ease}
+section[id]:hover{transform:translateY(-4px);box-shadow:0 12px 30px rgba(12,12,12,0.08)}
+
+/* Use a soft palette */
+:root{
+	--bg-1:linear-gradient(180deg,#f8fbff,#f1f7ff);
+	--bg-2:linear-gradient(180deg,#fff9f5,#fff5f0);
+	--bg-3:linear-gradient(180deg,#fbfff6,#f4fff0);
+	--bg-4:linear-gradient(180deg,#fff8ff,#fff3ff);
+	--heading-accent: rgba(10,132,255,0.12);
+}
+
+/* Assign gentle backgrounds per section id */
+#profile{background:var(--bg-1);border-color:rgba(10,132,255,0.12)}
+#skills{background:var(--bg-2);border-color:rgba(255,149,0,0.08)}
+#education{background:var(--bg-3);border-color:rgba(16,185,129,0.06)}
+#projects{background:var(--bg-4);border-color:rgba(175,82,222,0.06)}
+#achievements{background:linear-gradient(180deg,#fffdf5,#fffbea);border-color:rgba(245,158,11,0.06)}
+#certifications{background:linear-gradient(180deg,#f7fbff,#f0f6ff);border-color:rgba(99,102,241,0.06)}
+#contact{background:linear-gradient(180deg,#fff7f8,#fff1f3);border-color:rgba(239,68,68,0.04)}
+
+/* Section headings */
+section h2{display:inline-block;padding:.3rem .6rem;border-radius:6px;background:var(--heading-accent);color:var(--accent);margin:0 0 .6rem 0}
+
+/* Heading icons via emoji to avoid external assets */
+#profile h2::before{content:'👤 ';}
+#skills h2::before{content:'🛠️ ';}
+#education h2::before{content:'🎓 ';}
+#projects h2::before{content:'📁 ';}
+#achievements h2::before{content:'🏆 ';}
+#certifications h2::before{content:'📜 ';}
+#contact h2::before{content:'✉️ ';}
+
+/* Grid placement for larger screens */
+/* Removed multi-column grid layout to simplify to a single column for a clearer, mobile-first layout */
+
+@media (max-width:899px){
+	main{display:block;padding:0 1rem}
+	section{margin:0 0 1rem 0}
+}
+
+/* Headings and spacing */
+h2,h3{margin:0 0 .6rem 0}
+h4{margin:.6rem 0}
+footer{text-align:center;padding:1rem;color:#666}
+form label{display:block;margin:.5rem 0}
+input,textarea{width:100%;padding:.5rem;border:1px solid #ccc;border-radius:4px}
+button{background:var(--accent);color:#fff;border:none;padding:.5rem 1rem;border-radius:4px;cursor:pointer}
+.project-list article{border-top:1px solid #eee;padding:.5rem 0}
+
+/* Hero / banner styles */
+.hero{height:320px;display:flex;align-items:center;justify-content:center;color:#fff;position:relative;overflow:hidden;background-image:url('../images/bg.jpg');background-size:cover;background-position:center}
+.hero::before{content:'';position:absolute;left:0;top:0;right:0;bottom:0;background:rgba(0,0,0,0.35)}
+.hero-inner{position:relative;z-index:2;text-align:center;max-width:900px;padding:0 1rem}
+.hero h2{font-size:2rem;margin:.2rem 0}
+.hero p{opacity:0.95;margin:.5rem 0}
+.hero .cta{display:inline-block;margin-top:1rem;padding:.6rem 1rem;background:var(--accent);color:#fff;border-radius:6px;text-decoration:none}
+
+/* Page background image (fallback to hero if not present) */
+body.site-bg{background-image:url('images/bg.jpg');background-size:cover;background-position:center fixed;background-attachment:fixed}
+
+/* Section-specific styles */
+section[id]{border-radius:8px}
+
+/* Profile */
+#profile{display:flex;flex-direction:column;gap:.6rem}
+#profile p a{color:var(--accent)}
+
+/* Skills: badges */
+#skills ul{display:flex;flex-wrap:wrap;gap:.5rem;padding:0;list-style:none}
+#skills li{background:#fff;padding:.4rem .6rem;border-radius:20px;border:1px solid #e6e6e6;box-shadow:0 1px 2px rgba(0,0,0,0.03)}
+
+/* Education */
+#education p{margin:.4rem 0;padding:.4rem;border-left:4px solid var(--accent);background:linear-gradient(90deg,rgba(10,132,255,0.03),transparent)}
+
+/* Projects */
+.project-list{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:1rem}
+.project-list article{border:1px solid #eee;padding:.8rem;border-radius:8px;background:#fff;box-shadow:0 6px 18px rgba(12,12,12,0.03)}
+.project-list h3{margin:.2rem 0}
+
+/* Achievements & Certifications */
+#achievements ul,#certifications ul{list-style:disc;margin-left:1.2rem}
+
+/* XML/XSLT demo box */
+#xml-xslt-demo{min-height:120px;display:flex;flex-direction:column;gap:.6rem}
+#xml-output{background:#fafafa;border:1px dashed #e6e6e6;padding:1rem;border-radius:6px}
+
+/* Contact form improvements */
+/* Contact (static now) */
+#contact{padding-bottom:1rem}
+
+/* Profile card */
+.profile-card{display:flex;gap:1rem;align-items:center}
+.profile-img{width:96px;height:96px;border-radius:12px;overflow:hidden;flex:0 0 96px;border:2px solid rgba(0,0,0,0.06);background:#fff}
+.profile-img img{width:100%;height:100%;object-fit:cover;display:block}
+.profile-body{flex:1}
+.muted{color:#666;font-size:.95rem}
+
+/* Contact result colors (if used elsewhere) */
+#contact .result-ok{color:green}
+#contact .result-err{color:#b00020}
+
+/* Responsive tweaks */
+@media (max-width:640px){
+	.hero{height:240px}
+	.hero h2{font-size:1.4rem}
+	.project-list{grid-template-columns:1fr}
+}
+
+
