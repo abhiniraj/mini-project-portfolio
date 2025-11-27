@@ -1,38 +1,38 @@
 /* Minimal styles for the portfolio */
-:root{--accent:#0a84ff;--bg:#f7f7f8;--text:#111}
+:root{--accent:#0a84ff;--bg:#eef3f8;--text:#08101a}
 *{box-sizing:border-box}
 body{font-family:'Inter',Segoe UI,Arial,Helvetica,sans-serif;margin:0;background:var(--bg);color:var(--text);line-height:1.45}
-header{background:#fff;border-bottom:1px solid #e4e4e4;padding:1rem}
-header h1{margin:0}
+header{background:#fff;border-bottom:1px solid #e4e4e4;padding:1rem;display:flex;align-items:center;justify-content:space-between;gap:1rem}
+header h1{margin:0;font-size:1.2rem}
 nav{margin-top:.5rem}
 header nav{display:flex;flex-wrap:wrap;gap:.6rem;margin-top:.5rem}
 nav a{color:var(--accent);text-decoration:none;padding:.25rem .4rem;border-radius:4px}
-nav a:hover{background:rgba(10,132,255,0.06)}
+nav a:hover{background:rgba(10,132,255,0.12)}
 /* Layout: turn main into a responsive grid */
-main{max-width:1100px;margin:1.5rem auto;padding:0 1rem;display:block}
-section{background:#fff;padding:1rem;margin-bottom:1rem;border:1px solid #eee}
+main{max-width:1200px;margin:1.5rem auto;padding:0 1.25rem;display:block}
+section{background:#fff;padding:1rem;margin-bottom:1rem;border:1px solid rgba(0,0,0,0.06)}
 
 /* Per-section background colors and accents */
 section[id]{transition:transform .18s ease,box-shadow .18s ease}
-section[id]:hover{transform:translateY(-4px);box-shadow:0 12px 30px rgba(12,12,12,0.08)}
+section[id]:hover{transform:translateY(-6px);box-shadow:0 20px 48px rgba(12,12,12,0.16)}
 
 /* Use a soft palette */
 :root{
-	--bg-1:linear-gradient(180deg,#f8fbff,#f1f7ff);
-	--bg-2:linear-gradient(180deg,#fff9f5,#fff5f0);
-	--bg-3:linear-gradient(180deg,#fbfff6,#f4fff0);
-	--bg-4:linear-gradient(180deg,#fff8ff,#fff3ff);
-	--heading-accent: rgba(10,132,255,0.12);
+	--bg-1:linear-gradient(180deg,#eef6ff,#e6f0ff);
+	--bg-2:linear-gradient(180deg,#fff4ea,#fff0e6);
+	--bg-3:linear-gradient(180deg,#f6ffee,#eefdf0);
+	--bg-4:linear-gradient(180deg,#f9f2ff,#f4efff);
+	--heading-accent: rgba(10,132,255,0.22);
 }
 
 /* Assign gentle backgrounds per section id */
-#profile{background:var(--bg-1);border-color:rgba(10,132,255,0.12)}
-#skills{background:var(--bg-2);border-color:rgba(255,149,0,0.08)}
-#education{background:var(--bg-3);border-color:rgba(16,185,129,0.06)}
-#projects{background:var(--bg-4);border-color:rgba(175,82,222,0.06)}
-#achievements{background:linear-gradient(180deg,#fffdf5,#fffbea);border-color:rgba(245,158,11,0.06)}
-#certifications{background:linear-gradient(180deg,#f7fbff,#f0f6ff);border-color:rgba(99,102,241,0.06)}
-#contact{background:linear-gradient(180deg,#fff7f8,#fff1f3);border-color:rgba(239,68,68,0.04)}
+#profile{background:var(--bg-1);border-color:rgba(10,132,255,0.16)}
+#skills{background:var(--bg-2);border-color:rgba(255,149,0,0.12)}
+#education{background:var(--bg-3);border-color:rgba(16,185,129,0.12)}
+#projects{background:var(--bg-4);border-color:rgba(175,82,222,0.14)}
+#achievements{background:linear-gradient(180deg,#fff9ef,#fff5df);border-color:rgba(245,158,11,0.12)}
+#certifications{background:linear-gradient(180deg,#eef6ff,#e6f0ff);border-color:rgba(99,102,241,0.12)}
+#contact{background:linear-gradient(180deg,#fff5f6,#ffecef);border-color:rgba(239,68,68,0.08)}
 
 /* Section headings */
 section h2{display:inline-block;padding:.3rem .6rem;border-radius:6px;background:var(--heading-accent);color:var(--accent);margin:0 0 .6rem 0}
@@ -59,14 +59,14 @@ h2,h3{margin:0 0 .6rem 0}
 h4{margin:.6rem 0}
 footer{text-align:center;padding:1rem;color:#666}
 form label{display:block;margin:.5rem 0}
-input,textarea{width:100%;padding:.5rem;border:1px solid #ccc;border-radius:4px}
+input,textarea{width:100%;padding:.5rem;border:1px solid #bdbdbd;border-radius:4px}
 button{background:var(--accent);color:#fff;border:none;padding:.5rem 1rem;border-radius:4px;cursor:pointer}
 .project-list article{border-top:1px solid #eee;padding:.5rem 0}
 
 /* Hero / banner styles */
 .hero{height:320px;display:flex;align-items:center;justify-content:center;color:#fff;position:relative;overflow:hidden;background-image:url('../images/bg.jpg');background-size:cover;background-position:center}
-.hero::before{content:'';position:absolute;left:0;top:0;right:0;bottom:0;background:rgba(0,0,0,0.35)}
-.hero-inner{position:relative;z-index:2;text-align:center;max-width:900px;padding:0 1rem}
+.hero::before{content:'';position:absolute;left:0;top:0;right:0;bottom:0;background:rgba(0,0,0,0.55)}
+.hero-inner{position:relative;z-index:2;text-align:center;max-width:980px;padding:0 1rem}
 .hero h2{font-size:2rem;margin:.2rem 0}
 .hero p{opacity:0.95;margin:.5rem 0}
 .hero .cta{display:inline-block;margin-top:1rem;padding:.6rem 1rem;background:var(--accent);color:#fff;border-radius:6px;text-decoration:none}
@@ -90,7 +90,7 @@ section[id]{border-radius:8px}
 
 /* Projects */
 .project-list{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:1rem}
-.project-list article{border:1px solid #eee;padding:.8rem;border-radius:8px;background:#fff;box-shadow:0 6px 18px rgba(12,12,12,0.03)}
+.project-list article{border:1px solid rgba(0,0,0,0.06);padding:.9rem;border-radius:8px;background:#ffffff;box-shadow:0 10px 30px rgba(12,12,12,0.06)}
 .project-list h3{margin:.2rem 0}
 
 /* Achievements & Certifications */
@@ -106,7 +106,7 @@ section[id]{border-radius:8px}
 
 /* Profile card */
 .profile-card{display:flex;gap:1rem;align-items:center}
-.profile-img{width:96px;height:96px;border-radius:12px;overflow:hidden;flex:0 0 96px;border:2px solid rgba(0,0,0,0.06);background:#fff}
+.profile-img{width:96px;height:96px;border-radius:12px;overflow:hidden;flex:0 0 96px;border:2px solid rgba(0,0,0,0.16);background:#fff;transition:width .18s ease,height .18s ease}
 .profile-img img{width:100%;height:100%;object-fit:cover;display:block}
 .profile-body{flex:1}
 .muted{color:#666;font-size:.95rem}
@@ -120,6 +120,17 @@ section[id]{border-radius:8px}
 	.hero{height:240px}
 	.hero h2{font-size:1.4rem}
 	.project-list{grid-template-columns:1fr}
+}
+
+/* Desktop tweaks: larger hero, 3-column projects, bigger profile image */
+@media (min-width:900px){
+	.hero{height:420px}
+	.hero-inner{max-width:1100px}
+	.hero h2{font-size:2.6rem}
+	.project-list{grid-template-columns:repeat(3,1fr)}
+	.profile-img{width:128px;height:128px;flex:0 0 128px;border-radius:14px}
+	header h1{font-size:1.25rem}
+	header nav{margin-top:0}
 }
 
 
