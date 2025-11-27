@@ -65,6 +65,15 @@ Flow Diagram (linear):
 2. GitHub Pages publishes site -> users open site URL
 3. (Optional) Form submit -> `php/contact.php` on server -> DB or fallback file -> admin reads `data/messages.txt` or DB
 
+Design Diagrams
+
+Below are two illustrative diagrams included in the `docs/images/` folder:
+
+- `design_diagram.svg` — high-level architecture showing the browser, GitHub Pages static hosting, static assets, and the optional PHP+MySQL server used locally (XAMPP).
+- `flowchart.svg` — a simple flowchart that shows the request flow and the optional contact form branch (static contact vs server-side processing).
+
+You can view these images directly on GitHub or locally by opening the files in a browser: `docs/images/design_diagram.svg` and `docs/images/flowchart.svg`.
+
 Contact
 - Repo: https://github.com/abhiniraj/mini-project-portfolio
 - Live: https://abhiniraj.github.io/mini-project-portfolio/
