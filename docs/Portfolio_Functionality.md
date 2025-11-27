@@ -80,3 +80,45 @@ Contact
 
 ---
 Generated: a short summary ready for conversion to Word (.docx).
+
+Example: Contact storage (code + output)
+
+Code (example curl POST to `php/contact.php`):
+
+```bash
+curl -X POST \
+	-F "name=Abhiniraj K" \
+	-F "email=abhinirajk82982@gmail.com" \
+	-F "message=Hi, I'm interested in collaborating on a project." \
+	https://your-server.example.com/php/contact.php
+```
+
+Excerpt from `php/contact.php` (storage fallback logic):
+
+```php
+// Fallback: append to data/messages.txt (ensure folder is writable)
+$dataDir = __DIR__ . '/../data';
+if(!is_dir($dataDir)) mkdir($dataDir,0755,true);
+$file = $dataDir . '/messages.txt';
+$entry = date('c') . "\t" . $name . "\t" . $email . "\t" . str_replace(["\r","\n"],[' ',' '],$message) . "\n";
+$ok = file_put_contents($file,$entry,FILE_APPEND | LOCK_EX);
+
+if($ok === false){
+		echo json_encode(['status'=>'error','message'=>'Could not write message to storage.']);
+		exit;
+}
+
+echo json_encode(['status'=>'ok','stored'=>'file']);
+```
+
+Sample output (JSON) when the fallback is used:
+
+```json
+{"status":"ok","stored":"file"}
+```
+
+Explanation:
+- The example `curl` demonstrates how a client (or a simple HTML form) can POST `name`, `email`, and `message` to the `php/contact.php` endpoint.
+- `php/contact.php` first attempts to store the incoming message into MySQL using `php/db.php`.
+- If the database storage fails (common on GitHub Pages or local static previews), the script falls back to appending a timestamped, tab-delimited line to `data/messages.txt`.
+- The script returns a small JSON response indicating whether the message was stored in the `db` or saved to `file`. This makes it easy for the frontend to show a success/failure message based on the `status` and `stored` fields.
